@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const furnituredescription = document.getElementById("description");
   const furnitureprice = document.getElementById("price");
 
+  var item = document.getElementByClass("list-group shadow").lastChild;
+  var clone = item.cloneNode();
+  /*Id of the element below which you want to clone*/
+  document.getElementByClass("list-group-item").appendChild(clone);
+
   let furnitureRequest = new XMLHttpRequest();
   furnitureRequest.open("GET","http://localhost:3000/api/furniture");
   furnitureRequest.onload = function() {
@@ -14,3 +19,4 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   furnitureRequest.send();
 }, false);
+//clone and append through JS//

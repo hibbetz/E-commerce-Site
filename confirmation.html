@@ -11,111 +11,62 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
     <title> P3 - Homepage </title>
   </head>
   <body>
   <!-- Nav. Nav div is to outline the set of navigation links, navbar toggler is the setup for the toggle menu on mobile devices. data-toggle is js to collapse the associated class with the navigaton bar. in this instance "on click to collapse - navbar" -->
-<nav class="navbar navbar-expand-md navbar-primary bg-dark">
-  <button class="navbar-toggler navbar-custom" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-Nav">
-       <li class="nav-item">
-         <a class="nav-link" href="index.html">Home</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="Sign In.html">Log In/Sign Up</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="basket.html">Basket</a>
-       </li>
-    </ul>
-  </div>
-</nav>
-<br>
-<br>
+  <nav class="navbar navbar-expand-md navbar-primary bg-dark">
+    <button class="navbar-toggler navbar-custom" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-Nav">
+         <li class="nav-item">
+           <a class="nav-link" href="index.html">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="Product Page.html">Products</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link active disabled" href="confirmation.html">Basket</a>
+         </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <br>
 <div class="row">
  <div class="col-75">
    <div class="container">
      <form action="/action_page.php">
 
-       <div class="row">
-         <div class="col-50">
-           <h3>Billing Address</h3>
-           <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-           <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-           <label for="email"><i class="fa fa-envelope"></i> Email</label>
-           <input type="text" id="email" name="email" placeholder="john@example.com">
-           <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-           <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-           <label for="city"><i class="fa fa-institution"></i> City</label>
-           <input type="text" id="city" name="city" placeholder="New York">
-
-           <div class="row">
-             <div class="col-50">
-               <label for="state">State</label>
-               <input type="text" id="state" name="state" placeholder="NY">
-             </div>
-             <div class="col-50">
-               <label for="zip">Zip</label>
-               <input type="text" id="zip" name="zip" placeholder="10001">
-             </div>
-           </div>
-         </div>
-
-         <div class="col-50">
-           <h3>Payment</h3>
-           <label for="fname">Accepted Cards</label>
-           <div class="icon-container">
-             <i class="fa fa-cc-visa" style="color:navy;"></i>
-             <i class="fa fa-cc-amex" style="color:blue;"></i>
-             <i class="fa fa-cc-mastercard" style="color:red;"></i>
-             <i class="fa fa-cc-discover" style="color:orange;"></i>
-           </div>
-           <label for="cname">Name on Card</label>
-           <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-           <label for="ccnum">Credit card number</label>
-           <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-           <label for="expmonth">Exp Month</label>
-           <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-           <div class="row">
-             <div class="col-50">
-               <label for="expyear">Exp Year</label>
-               <input type="text" id="expyear" name="expyear" placeholder="2018">
-             </div>
-             <div class="col-50">
-               <label for="cvv">CVV</label>
-               <input type="text" id="cvv" name="cvv" placeholder="352">
-             </div>
-           </div>
-         </div>
-
-       </div>
-       <label>
-         <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-       </label>
-       <input type="submit" value="Continue to checkout" class="btn">
-     </form>
-   </div>
- </div>
-
- <div class="col-25">
-   <div class="container">
-     <h4>Cart
-       <span class="price" style="color:black">
-         <i class="fa fa-shopping-cart"></i>
-         <b>4</b>
-       </span>
-     </h4>
-     <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-     <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-     <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-     <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-     <hr>
-     <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-   </div>
- </div>
+ <section class="container content-section">
+   <div class="col-xl-6 col-xs-10">
+          <h2 class="section-header">CART</h2>
+          <div class="cart-row">
+              <span class="cart-item cart-header cart-column">ITEM</span>
+              <span class="cart-price cart-header cart-column">PRICE</span>
+              <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+          </div>
+          <div class="cart-items">
+              <div class="cart-row">
+                  <div class="cart-item cart-column">
+                      <img class="cart-item-image" src="" width="100" height="100">
+                      <span class="cart-item-title"></span>
+                  </div>
+                  <span class="cart-price cart-column"></span>
+                  <div class="cart-quantity cart-column">
+                      <input class="cart-quantity-input" type="number" value="1">
+                      <button class="btn btn-danger" type="button">REMOVE</button>
+                  </div>
+              </div>
+          <div class="cart-total">
+              <strong class="cart-total-title">Total</strong>
+              <span class="cart-total-price">$39.97</span>
+          </div>
+          <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </div>
+      </section>
 </div>
 </body>

@@ -10,6 +10,12 @@ body {
   .carousel {
   padding-top: 5px;
   margin-top: 5px;
+  height: auto;
+  width: auto;
+}
+.main-card-img-top{
+  height: auto;
+  width: auto;
 }
 .main-card-img-top:hover{
     filter: grayscale(30%) blur(2px);
@@ -40,11 +46,11 @@ body {
   }
 
   button {
-    background-color: #f44336;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
+    background-color: #afcfee;
+    color: black;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: solid;
     cursor: pointer;
     width: 100%;
   }
@@ -75,14 +81,6 @@ body {
     }
   }
 
-  .row {
-    display: -ms-flexbox; /* IE10 */
-    display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  }
-
   .col-25 {
     -ms-flex: 25%; /* IE10 */
     flex: 25%;
@@ -98,18 +96,12 @@ body {
     flex: 75%;
   }
 
-  .col-25,
-  .col-50,
-  .col-75 {
-    padding: 0 16px;
-  }
 
   .container {
     background-color: #f2f2f2;
-    padding: 5px 10px 15px 10px;
     border: 5px solid lightgrey;
     border-radius: 3px;
-    padding: 16px;
+    padding: 5px;
     align-items: center;
   }
 
@@ -178,12 +170,6 @@ img {
   width: auto;
 }
 
-.display-4 {
-  text-align: center;
-  color: #ff8c69; }
-
-.jobs {
-  padding-left: 9% !important; }
 
 .AddCart {
  padding: 2px;
@@ -291,4 +277,23 @@ img {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+
+.ordercomplete {
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  border-radius: 1px;
+  padding: 2px;
+  align-items: center;
+}
+
+.Return {
+  color: #afcfee;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
 }

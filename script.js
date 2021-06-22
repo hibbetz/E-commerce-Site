@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var item = document.getElementsByClassName("productslisting")[0];
-  var clone = item.cloneNode(true);
-  /*Id of the element below which you want to clone*/
-  document.getElementsByClassName("productscontainer")[0].appendChild(clone);
-
   let furnitureRequest = new XMLHttpRequest();
   furnitureRequest.open("GET","http://localhost:3000/api/furniture");
   furnitureRequest.onload = function() {

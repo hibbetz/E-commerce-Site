@@ -1,24 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
   var item = document.getElementsByClassName("productslisting");
-  document.getElementsByClassName("productscontainer")
+  var button = document.getElementsByClassName("AddCart")[0];
+  console.log("hello",button)
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get('id');
+  button.onclick = function(){
+    appendIDtoCart(myParam)
+  };
+  document.getElementsByClassName("productscontainer")
   let furnitureRequest = new XMLHttpRequest();
   furnitureRequest.open("GET",`http://localhost:3000/api/furniture/${myParam}`);
   furnitureRequest.onload = function() {
       var furnitureData = JSON.parse(furnitureRequest.response);
-      console.log("myParam", furnitureData)
       createList(furnitureData);
     };
   furnitureRequest.send();
 }, false);
 //clone and append through JS//
 
+const appendIDtoCart = (id) => {
+  const selectedProducts = localStorage.getItem('Selected-Products');
+  if (selectedProducts === null) {
+    localStorage.setItem('Selected-Products',`${id}`);
+  }
+  else {
+      localStorage.setItem('Selected-Products',`${selectedProducts},${id}`);
+  }
+}
+
+
 const createList = (furnitureData) => {
       const item = furnitureData
-      var itemDiv = document.getElementsByClassName("productslisting");
+      console.log(`Varnishes`, item)
+      var itemDiv = document.getElementsByClassName("products-listing");
       const furniturename = document.querySelector(".furniture-name");
-      console.log("furniturename", furniturename)
       furniturename.setAttribute('href',`Detailed.html?id=${item._id}`);
       const furnituredescription = document.querySelector(".description");
       const furnitureprice = document.querySelector(".price");
@@ -27,5 +42,14 @@ const createList = (furnitureData) => {
       furnituredescription.innerText= item.description
       furnitureprice.innerText= item.price
       furnitureimage.src= item.imageUrl
-      document.getElementsByClassName("productscontainer");
+      var ul = document.getElementById("varnishing-picker");
+      item.varnish.forEach((varnish) => {
+        var li = document.createElement("option");
+        var linkText = document.createTextNode(varnish);
+        li.appendChild(linkText);
+        ul.appendChild(li);
+      })
+      // document.getElementsByClassName("products-container");
 }
+
+// localStorage.getItem(`Selected-Products`).split(`,`)
